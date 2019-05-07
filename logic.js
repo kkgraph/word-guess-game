@@ -86,3 +86,13 @@ function updateRound(object, letter) {
     }
     return object;
 }
+
+// hasWon -- logs whether the user won
+function hasWon(puzzleState) {
+    for (var i = 0; i < puzzleState.length; i++) {
+    if (puzzleState[i] === "_") {
+        return false;
+     } 
+    }
+    return true;
+}
