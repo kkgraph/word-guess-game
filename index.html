@@ -52,10 +52,10 @@
         </div>
         <div class="row">
             <div class="col"></div>
-            <div class="col-2 border border-danger" id="won-count">
+            <div class="col-2 border border-danger" id="win-counter">
                 <h3 id="won">0</h3>  <!--wins will be stored here-->
             </div>
-            <div class="col-2 border border-danger" id="lost-count">
+            <div class="col-2 border border-danger" id="loss-counter">
                 <h3 id="lost">0</h3>  <!--losses will be stored here-->
             </div>
             <div class="col"></div>
@@ -68,20 +68,37 @@
             </div>
             <div class="col-md-10  mt-3" id="rules">
                 <h2>Rules</h2>
-                <p>You have 9 attempts to get the word right. All words are bakes found on the <em>Great British Bake Off</em>. Guess the right letter and the blank space will be replaced by that letter. Guess the wrong word and your guesses will decrease.</p> 
+                <p>You have <strong>9</strong> attempts to get the word right. All words are bakes found on the <em>Great British Bake Off</em>. Guess the right letter and the blank space will be replaced by that letter. Guess the wrong word and your guesses will decrease.</p> 
                 <p>Now, on your mark, get set, WORD!</p>
             </div>
             <div class="col-sm"></div>
         </div>
-<!--lives updated below-->   
+
+<!--ATTEMPS LEFT-->
         <div class="row">
                 <div class="col-sm"></div>
-                <div class="col-md-10  mt-3">
-                    <h2>Attemps Left</h2>
-                    <p>You have <span id="lives-left">9</span> attemps to find the baked good. </p>
-                    <div id="letter-buttons"></div> <!--words go here-->
+                <div class="col-md-10  mt-3" id="guesses">
+                    <p>You have <span id="guesses-left">9</span> attemps to find the word. </p>
                 </div>
                 <div class="col-sm"></div>
+        </div>
+
+<!--PUZZLE STATE--> 
+        <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-md-10 mt-3">
+                    <h1 id="puzzle-state">_ _ _ _ _ _</h1>
+                </div>
+                <div class="col-sm"></div>
+            </div>
+
+<!--PLAY BUTTONS-->
+        <div class="row">
+            <div class="col-sm"></div>
+            <div class="col-md-10 mt-3">
+                <div id="letter-buttons"></div> <!--words go here-->
+            </div>
+            <div class="col-sm"></div>
         </div>
 
 <!--PLAY AGAIN AREA-->

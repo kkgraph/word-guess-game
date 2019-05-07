@@ -160,3 +160,11 @@ var myGame = setupGame(gameWords, 0, 0);
 //END GAME FUNCTION 
 
 //PAGE SET UP
+
+/*need these elements in the page:
+puzzle-state -- have it 
+wrong-guesses -- hover button/stuff works maybe? 
+guesses-left -- have it 
+win-counter -- have it 
+loss-counter -- have it 
+*/

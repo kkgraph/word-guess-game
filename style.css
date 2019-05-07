@@ -137,6 +137,12 @@ a:active {
     margin-right: auto;
     background: white;
 }
+h1 {
+    color: #01295C;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 2em;
+    text-align: center;
+}
 h2 {
     color: white;
     background: #EB2226;
@@ -164,6 +170,19 @@ h3 {
 
 #lost {
     color: #01295C;
+}
+
+#guesses-left {
+    color: #EB2226;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 18px;
+}
+
+#guesses {
+    text-align: center;
+    font-style: italic;
+    font-size: 18px;
 }
 
 /*BUTTONS TO PLAY AGAIN*/
