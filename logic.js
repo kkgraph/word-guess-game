@@ -63,7 +63,6 @@ function fillBlanks(word, puzzleState, letter) {
 //START GAME FUNCTION 
 
 //setupRound function & returned object-- sets up the game round 
-//CHANGED obj to object !!! REMOVED THIS AFTERWARDS
 function setupRound(word) {
     var object = {
         word: word,
@@ -97,7 +96,7 @@ function hasWon(puzzleState) {
     return true;
 }
 
-// hasLost -- Did the user lose? What happens if they lose?
+// hasLost -- determines if the user has lost 
 function hasLost(guessesLeft) {
     if (guessesLeft === 0) {
         return true;
@@ -105,4 +104,47 @@ function hasLost(guessesLeft) {
     return false;
 }
 
-//isEndOfRound function
+//isEndOfRound -- function for notification that the round is over 
+function isEndOfRound(object) {
+    if (object.guessesLeft === 0) {
+    return true;
+}
+    if (hasWon(object.puzzleState)) {
+        return true;
+    }
+return false;
+}
+
+//setupGame function -- setting up the game 
+function setupGame(gameWords, wins, losses) {
+    var game = {
+        words: gameWords,
+        wins: wins,
+        losses: losses,
+        round: setupRound(randomWord(gameWords)),   
+        }
+    return game;
+ }
+
+//startNewRound function -- setting up a new round after a previous round 
+function startNewRound(game) {
+    var puzzleState = game.round.puzzleState;
+    if (hasWon(puzzleState) === true) {
+       game.wins++;
+       alert("You won! You knew the word was " + game.round.word + "! Prue would be proud!")
+       //i want to figure out how to insert this on the page and not have an alert
+    }
+    else {
+        game.losses++;
+        alert("Sorry, mate, but the word was " + game.round.word + ". Paul wouldn't be pleased.")
+        //i want to figure out how to insert this on the page and not have an alert
+    }
+    return game;
+}
+
+//myGame var so that this can be added to the contents of the page
+var myGame = setupGame(gameWords, 0, 0);
+//END GAME FUNCTION 
+
+
+//PAGE SET UP
