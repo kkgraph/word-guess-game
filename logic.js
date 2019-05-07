@@ -1,3 +1,4 @@
+var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 /*
 GAME LOGIC PART 1
 1. word array = gameWords --- DONE & PASSES
@@ -144,7 +145,18 @@ function startNewRound(game) {
 
 //myGame var so that this can be added to the contents of the page
 var myGame = setupGame(gameWords, 0, 0);
-//END GAME FUNCTION 
 
+//creating letter buttons 
+      for (var i = 0; i < alphabet.length; i++) {
+        var button = document.createElement('button');
+        button.textContent = alphabet[i];
+        button.setAttribute('class', 'letter');
+        button.setAttribute('id', 'letter_' + alphabet[i]);
+        document.getElementById('buttons').appendChild(button);
+        // button.setAttribute('onclick', 'clickme("' + allowedchars[i] + '")');     //onclick in html trick...works!
+        document.getElementById('letter_' + alphabet[i]).onclick = getClickCallback(alphabet[i]);     //solution without the onclick
+    }
+
+//END GAME FUNCTION 
 
 //PAGE SET UP

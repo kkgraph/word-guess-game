@@ -181,7 +181,8 @@ button{
   }
   
   button:hover{
-    background-color: #88ace0;
+    background-color:white;
+    color: #01295C;
     cursor:pointer;
   }
   
@@ -195,4 +196,13 @@ button{
     background-color: #A7A9AC;
     color: white;
     cursor: auto;
+  }
+
+  /*FOOTERS*/
+  .footer {
+      color: #01295C;
+      margin: 10px;
+      padding: auto;
+      font-family: sans-serif;
+      text-align: center;
   }
