@@ -96,3 +96,13 @@ function hasWon(puzzleState) {
     }
     return true;
 }
+
+// hasLost -- Did the user lose? What happens if they lose?
+function hasLost(guessesLeft) {
+    if (guessesLeft === 0) {
+        return true;
+    }
+    return false;
+}
+
+//isEndOfRound function
