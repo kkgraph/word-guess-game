@@ -7,11 +7,8 @@
 body {
     margin: 0;
     padding: 0;
-    background: #EFE9E5;
+    background:#EFE9E5;
     font-family: 'Lora', serif;
-}
-header {
-    margin: 10px;
 }
 /*ANIMATED HEADER BOX ELEMENTS*/
 /*WHY DOES THE LEFT AND RIGHT ONE NOT WORK UGHHHH*/
@@ -118,39 +115,13 @@ header {
 
 /*CONTAINER CONTENTS*/
 .container {
-    margin: auto;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
 }
-/*SCORE BOARD STUFF*/
-
-#score-board {
-    margin: 20px auto;
-    border: 3px solid white;
-    border-radius: 4px;
+h3 {
+    color: #EB2226;
+    font-family: 'Righteous', cursive;
     text-align: center;
-    width: 200px;
-    color: white;
-    font-size: 46px;
-    padding: 15px 20px;
-    font-family: 'Righteous', cursive;
-    position: relative;
-}
-
-.badge {
-    background: #EB2226;
-    color: white;
-    font-size: 14px;
-    padding: 2px 10px;
-    font-family: 'Righteous', cursive;
-}
-
-#win-score {
-    position: absolute;
-    top: 30px;
-    left: -25px;
-}
-
-#lose-score {
-    position: absolute;
-    top: 30px;
-    right: -10px;
 }

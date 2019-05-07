@@ -15,6 +15,7 @@
     <title>The Great British Word Off</title>
 </head>
 <body>
+
 <!--Great British Word Off Animated Top Header // Row 1 // 1 Column //-->
     <header>
         <div class="row">
@@ -34,34 +35,77 @@
             <div class="col-md-2"></div>
         </div>
     </header>
+
 <!--CONTAINER START-->
     <div class="container">
-    <!--Score board that logs how many wins/losses the user has // Row 2 // 1 colum?-->
-            <div class="row">
-                <div class="col-md" id="score-board">
-                    <div id="win" class="badge">Won</div>
-                    <div id="loss" class="badge">Lost</div>
-                    <span id="win-score">0</span>:<span id="loss-score">0</span>
-                </div>
-            </div>
 
-    <!--rules for the game-->
-            <div class="rules">
+<!--SCORE BOARD STARTS // store win and losses // 2 rows // 4 colms-->
+        <div class="row mt-3"> 
+            <div class="col"></div>
+            <div class="col-2 border border-danger" id="titleWon">
+                <h3>WON</h3>
+            </div>
+            <div class="col-2 border border-danger" id="titleLost">
+                <h3>LOST</h3>
+            </div>
+           <div class="col"></div>
+        </div>
+        <div class="row">
+             <div class="col"></div>
+            <div class="col-2 border border-danger" id="won-label">
+                <h3 id="won">0</h3>  <!--wins will be stored here-->
+            </div>
+            <div class="col-2 border border-danger" id="lost-label">
+                <h3 id="lost">0</h3>  <!--losses will be stored here-->
+            </div>
+            <div class="col"></div>
+        </div> 
+<!--END SCORE BOARD -->
+
+<!--RULES FOR GAME START-->
+        <div class="row mt-3">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6" id="rules">
+                <h3>Rules</h3>
                 <p>You have 10 guesses! Guess the right letter and the blank space will be replaced by that letter. Guess the wrong word and your guesses will decrease. Now, on your mark, get set, WORD!</p>
             </div>
+            <div class="col-md-3"></div>
+        </div>
+    <!--lives updated below-->   
+        <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <h3>Lives</h3>
+                    <p>You have <a id="lives-left">10</a> attemps to find the password. </p>
+                    <div id="buttons"></div> <!--words go here-->
+                </div>
+                <div class="col-md-3"></div>
+        </div>
 
-    <!--Results I want the result of you win! you lost! to go here-->   
-            <div class="result">
-                <p>Let's play!</p>
+<!--play again area-->
+        <div class="row mt-3">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <button id="playAgain" class="game">Play Again?</button>
             </div>
-    <!--the word is here-->
-            <div class="word"></div>
+            <div class="col-md-3"></div>
+        </div>
 
-    <!--button needs to go here. i want them to be different if they are pressed-->
-            <div class="button-letters"></div>
+<!--FOOTER-->
+        <div class="row">
 
-    <!--Guesses left-->
-            <div class="guessesLeft">You have <span id="guesses">10</span> guesses left.</div>
+                <div class="col-5"> <!--figure this out later-->
+                    Enjoying the game? Share it with your friends!
+                </div>
+                <div class="col-2">
+                </div>
+                <div class="col-5">
+                    <a href="https://github.com/kkgraph" id="signature">by Kim Graff</a>
+                </div>
+    
+            </div>
+    
     </div>
 <!--link to javascript-->
 <script src="logic.js"></script>
