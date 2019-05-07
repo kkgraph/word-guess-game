@@ -10,6 +10,23 @@ body {
     background:#EFE9E5;
     font-family: 'Lora', serif;
 }
+
+/*LINK*/
+
+a {
+    color: #B9CFED;
+}
+a:visited {
+    color: #01295C;
+} 
+a:hover {
+    color: white;
+    background: #01295C;
+}
+a:active {
+    color: #EB2226;
+}
+
 /*ANIMATED HEADER BOX ELEMENTS*/
 /*WHY DOES THE LEFT AND RIGHT ONE NOT WORK UGHHHH*/
 .box {
@@ -120,8 +137,62 @@ body {
     margin-right: auto;
     background: white;
 }
+h2 {
+    color: white;
+    background: #EB2226;
+    font-weight: bold;
+    text-align: center;
+}
 h3 {
-    color: #EB2226;
+    color:white;
     font-family: 'Righteous', cursive;
     text-align: center;
 }
+
+/*SCORE BOARD STUFF*/
+#won-label {
+    background: #EB2226;
+}
+
+#lost-label {
+    background: #EB2226;
+}
+
+#won {
+    color: #01295C;
+}
+
+#lost {
+    color: #01295C;
+}
+
+/*BUTTONS TO PLAY AGAIN*/
+button{
+    color:white;
+    background-color: #01295C;
+    font-family: sans-serif;
+    font-size:25px;
+    padding:2px 2px 2px 2px;
+    min-width:30px;
+    height:40px;
+    margin: 2px 2px 2px 2px;
+    border: solid 1px #01295C;
+    border-radius: 3px;
+  }
+  
+  button:hover{
+    background-color: #88ace0;
+    cursor:pointer;
+  }
+  
+  button:disabled:hover{
+    background-color: #88ace0;
+    border: solid 1px #88ace0;
+  }
+  
+  button:disabled{
+    border: 1px solid #A7A9AC;
+    background-color: #A7A9AC;
+    color: white;
+    cursor: auto;
+  }
