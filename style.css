@@ -1,5 +1,3 @@
-/*I decided not to use Bootstrap to try to challenge myself to create my own css and responsive site.
-*/
 
 /*BASICS*/
 * {
@@ -12,14 +10,18 @@ body {
     background: #EFE9E5;
     font-family: 'Lora', serif;
 }
+header {
+    margin: 10px;
+}
 /*ANIMATED HEADER BOX ELEMENTS*/
+/*WHY DOES THE LEFT AND RIGHT ONE NOT WORK UGHHHH*/
 .box {
     position: absolute;
-    top: 10%;
-    left: 40%;
+/*    top: 10%;
+    left: 20%; */
     transform: translate(-50%, -50);
-    width: 400px;
-    height: 200px;
+    width: 800px;
+    height: 250px;
     background: white;
     box-sizing: border-box;
     overflow: hidden;
@@ -33,7 +35,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background:#fffdf2;
+    background:#fff5bf;
     transition: 0.5s;
     pointer-events: none;
 }
@@ -43,19 +45,18 @@ body {
 }
 .box .content {
     position: absolute;
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    bottom: 15px;
-    border: 3px solid #ffeb3b;
-    padding: 30px;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 8px dotted #ffdf2e;
     text-align: center;
     box-shadow: 0 5px 10px #fffdf2;
 }
 .box .content .header1 {
     color: #01295C;
     font-family: 'Londrina Solid', cursive;
-    font-size: 3em;
+    font-size: 5em;
     margin: 0;
     padding: 0;
 }
@@ -63,8 +64,8 @@ body {
 .box .content .header2 {
     color: #01295C;
     font-family: 'Londrina Outline', cursive;
-    font-size: 4em;
-    margin: 0 0 5px;
+    font-size: 6em;
+    margin: -35px;
     padding: 0;
 }
 
@@ -80,28 +81,19 @@ body {
 .box span:nth-child(1) {
     transform: rotate(0deg);
 }
-
 .box span:nth-child(3) {
     transform: rotate(180deg);
 } 
-
-.box span:nth-child(2):before {
-    animation-delay: -2s;
-}
-.box span:nth-child(4):before {
-    animation-delay: -2s;
-}
 .box span:before {
     content: '';
     position: absolute;
     width: 100%;
-    height: 3px;
+    height: 6px;
     background: #ffdf2e;
     animation: animate 4s linear infinite;
 }
 
-@keyframes animate 
-{
+@keyframes animate {
     0%
     {
         transform: scaleX(0);
@@ -124,4 +116,41 @@ body {
     }
 }
 
-/*BODY CONTENTS*/
+/*CONTAINER CONTENTS*/
+.container {
+    margin: auto;
+}
+/*SCORE BOARD STUFF*/
+
+#score-board {
+    margin: 20px auto;
+    border: 3px solid white;
+    border-radius: 4px;
+    text-align: center;
+    width: 200px;
+    color: white;
+    font-size: 46px;
+    padding: 15px 20px;
+    font-family: 'Righteous', cursive;
+    position: relative;
+}
+
+.badge {
+    background: #EB2226;
+    color: white;
+    font-size: 14px;
+    padding: 2px 10px;
+    font-family: 'Righteous', cursive;
+}
+
+#win-score {
+    position: absolute;
+    top: 30px;
+    left: -25px;
+}
+
+#lose-score {
+    position: absolute;
+    top: 30px;
+    right: -10px;
+}

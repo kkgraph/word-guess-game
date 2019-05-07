@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--british flag favicon-->
     <link rel="shortcut icon" href="favicon.ico">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--adding css-->
     <link rel="stylesheet" href="style.css">
     <!--add fonts Londrina Outline, Londrina Solid, Lora, and Righteous-->
@@ -13,44 +15,54 @@
     <title>The Great British Word Off</title>
 </head>
 <body>
+<!--Great British Word Off Animated Top Header // Row 1 // 1 Column //-->
     <header>
-        <div class="box">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <div class="content">
-                <p class="header1">GREAT BRITISH</p>
-                <p class="header2">WORD OFF</p>
-            </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="box">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <div class="content">
+                            <p class="header1">GREAT BRITISH</p>
+                            <p class="header2">WORD OFF</p>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-md-2"></div>
         </div>
     </header>
+<!--CONTAINER START-->
+    <div class="container">
+    <!--Score board that logs how many wins/losses the user has // Row 2 // 1 colum?-->
+            <div class="row">
+                <div class="col-md" id="score-board">
+                    <div id="win" class="badge">Won</div>
+                    <div id="loss" class="badge">Lost</div>
+                    <span id="win-score">0</span>:<span id="loss-score">0</span>
+                </div>
+            </div>
 
-<!--Score board that logs how many wins/losses the user has-->
-    <div class="score-board">
-        <div id="win" class="badge">Won</div>
-        <div id="loss" class="badge">Lost</div>
-        <span id="win-score">0</span>:<span id="loss-score">0</span>
+    <!--rules for the game-->
+            <div class="rules">
+                <p>You have 10 guesses! Guess the right letter and the blank space will be replaced by that letter. Guess the wrong word and your guesses will decrease. Now, on your mark, get set, WORD!</p>
+            </div>
+
+    <!--Results I want the result of you win! you lost! to go here-->   
+            <div class="result">
+                <p>Let's play!</p>
+            </div>
+    <!--the word is here-->
+            <div class="word"></div>
+
+    <!--button needs to go here. i want them to be different if they are pressed-->
+            <div class="button-letters"></div>
+
+    <!--Guesses left-->
+            <div class="guessesLeft">You have <span id="guesses">10</span> guesses left.</div>
     </div>
-
-<!--rules for the game-->
-<div class="rules">
-    <p>You have 10 guesses! Guess the right letter and the blank space will be replaced by that letter. Guess the wrong word and your guesses will decrease. Now, on your mark, get set, WORD!</p>
-</div>
-
-<!--Results I want the result of you win! you lost! to go here-->   
-<div class="result">
-    <p>Let's play!</p>
-</div>
-<!--the word is here-->
-<div class="word"></div>
-
-<!--button needs to go here. i want them to be different if they are pressed-->
-<div class="button-letters"></div>
-
-<!--Guesses left-->
-<div class="guessesLeft">You have <span id="guesses">10</span> guesses left.</div>
-
 <!--link to javascript-->
 <script src="logic.js"></script>
 </body>
