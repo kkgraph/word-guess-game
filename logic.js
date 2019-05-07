@@ -146,16 +146,16 @@ function startNewRound(game) {
 //myGame var so that this can be added to the contents of the page
 var myGame = setupGame(gameWords, 0, 0);
 
-//creating letter buttons 
-      for (var i = 0; i < alphabet.length; i++) {
-        var button = document.createElement('button');
-        button.textContent = alphabet[i];
-        button.setAttribute('class', 'letter');
-        button.setAttribute('id', 'letter_' + alphabet[i]);
-        document.getElementById('buttons').appendChild(button);
-        // button.setAttribute('onclick', 'clickme("' + allowedchars[i] + '")');     //onclick in html trick...works!
-        document.getElementById('letter_' + alphabet[i]).onclick = getClickCallback(alphabet[i]);     //solution without the onclick
-    }
+// //creating letter buttons 
+//       for (var i = 0; i < alphabet.length; i++) {
+//         var button = document.createElement('button');
+//         button.textContent = alphabet[i];
+//         button.setAttribute('class', 'letter');
+//         button.setAttribute('id', 'letter_' + alphabet[i]);
+//         document.getElementById('buttons').appendChild(button);
+//         // button.setAttribute('onclick', 'clickme("' + allowedchars[i] + '")');     //onclick in html trick...works!
+//         document.getElementById('letter_' + alphabet[i]).onclick = getClickCallback(alphabet[i]);     //solution without the onclick
+//     }
 
 //END GAME FUNCTION 
 
@@ -168,3 +168,53 @@ guesses-left -- have it
 win-counter -- have it 
 loss-counter -- have it 
 */
+
+//adding the _ _ _ _ for the puzzle length on page 
+var puzzle = document.getElementById("puzzle-state");
+puzzle.innerHTML = myGame.round.puzzleState.join(" ");
+
+// console.log(puzzle);
+
+// Event function to input and output user experience
+var keyPressed;
+document.onkeyup = function (event) {
+
+    keyPressed = event.key.toLowerCase() 
+    console.log("The letter " + keyPressed + " was pressed");
+        isCorrectGuess(myGame.round.word, keyPressed);
+        fillBlanks(myGame.round.word, myGame.round.puzzleState, keyPressed);
+        updateRound(myGame.round, keyPressed);
+        hasWon(myGame.round.puzzleState);
+        hasLost(myGame.round.guessesLeft);
+
+// determines win or not and guesses left
+    if (isEndOfRound(myGame.round)){
+        myGame = startNewRound(myGame);
+        myGame.round = setupRound(randomWord(gameWords));
+    }
+
+// Uses the ramdom word and displays the empty blanks
+    document.getElementById("puzzle-state").innerText = myGame.round.puzzleState.join(" ");
+
+// shows the letters that are wrong guesses
+    document.getElementById("wrong-guesses").innerText = myGame.round.wrongGuesses;
+
+//WIN STUFF
+// shows  updated number of wins
+    document.getElementById("win-counter").innerText = myGame.wins;
+
+//First win-counter to 0
+    document.getElementById("win-counter").innerHTML.to.equal("0");
+
+//LOSS STUFF
+// shows the updated object for total losses
+    document.getElementById("loss-counter").innerText = myGame.losses;
+//First loss-counter to 0
+    document.getElementById("loss-counter").innerHTML.to.equal("0");
+
+
+//LIVES LEFT STUFF
+// shows updated number of guesses left
+    document.getElementById("guesses-left").innerText = myGame.round.guessesLeft;
+
+} // ------------ end of onclick event
