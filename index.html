@@ -11,19 +11,34 @@
     <title>The Great British Word Off</title>
 </head>
 <body>
-    <div class="container">
-      <header>
-          <h1 id="solid">GREAT BRITISH</h1>
-          <h1 id="outline">WORD OFF</h1>
-          <h2>Ready! Set! Word!</h2>
-      </header>
-      <div class="rules">Add game rules here</div>
-      <div class="hasWon">Wins: <span id="wins"></span> </div>
-      <div class="hasLost">Losses: <span id="losses"></span></div>
-      <div class="guessesLeft">You have <span id="guesses">10</span> guesses left.</div>
-      <div class="fillsBlanks">_ _ _ _ (word goes here)</div>
-      <!--okay so here are the letters and leave the letters a different color if they are pressed-->
+    <header>
+        <h1 id="solid">GREAT BRITISH</h1>
+        <h1 id="outline">WORD OFF</h1>
+    </header>
 
+<!--Score board that logs how many wins/losses the user has-->
+    <div class="score-board">
+        <div id="win" class="badge">Won</div>
+        <div id="loss" class="badge">Lost</div>
+        <span id="win-score">0</span>:<span id="loss-score">0</span>
     </div>
+
+<!--rules for the game-->
+<div class="rules">You have 10 guesses! Guess the right letter and the blank space will be replaced by that letter. Guess the wrong word and your guesses will decrease. Now, on your mark, get set, WORD!</div>
+
+<!--Results I want the result of you win! you lost! to go here-->   <div class="result">
+            <p>Let's play!</p>
+    </div>
+<!--the word is here-->
+<div class="word"></div>
+
+<!--button needs to go here. i want them to be different if they are pressed-->
+<div class="button-letters"></div>
+
+<!--Guesses left-->
+<div class="guessesLeft">You have <span id="guesses">10</span> guesses left.</div>
+
+<!--link to javascript-->
+<script src="logic.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ GAME LOGIC PART 1
 
 //UTILITY FUNCTIONS START 
 //word array -- setting up 10 baked good word choices. Longest word 12 letters & shortest 4.
-var gameWords = ["choux", "biscuits", "millefeuille", "frangipane", "palvova", "meringue", "bread", "pies", "madaleines", "cakes"]
+var gameWords = ["choux", "biscuits", "millefeuille", "frangipane", "palvova", "meringue", "bread", "pies", "madaleines", "sponge"]
 
 //randomWord function -- making the words generate 
 var randomWord = function(gameWords) {
