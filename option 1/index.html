@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--british flag favicon-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--adding css-->
+    <link rel="stylesheet" href="style.css">
+    <!--add fonts Londrina Outline, Londrina Solid, Lora, and Righteous-->
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Outline|Londrina+Solid|Lora|Righteous" rel="stylesheet">
+    <title>The Great British Word Off</title>
+</head>
+<body>
+
+<!--Great British Word Off Animated Top Header // Row 1 // 1 Column //-->
+    <header>
+        <div class="row">
+            <div class="col-sm"></div>
+            <div class="col-md-10">
+                <div class="box">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <div class="content">
+                        <p class="header1">GREAT BRITISH</p>
+                        <p class="header2">WORD OFF</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm"></div>
+        </div>
+    </header>
+
+<!--CONTAINER START-->
+    <div class="container">
+
+<!--SCORE BOARD STARTS // store win and losses // 2 rows // 4 colms-->
+        <div class="row mt-5"> 
+            <div class="col mt-5"></div>
+            <div class="col-2 border border-danger mt-5" id="won-label">
+                <h3>WON</h3>
+            </div>
+            <div class="col-2 border border-danger mt-5" id="lost-label">
+                <h3>LOST</h3>
+            </div>
+           <div class="col mt-5"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-2 border border-danger">
+                <span id="win-counter">0</span>  <!--wins will be stored here-->
+            </div>
+            <div class="col-2 border border-danger">
+                <span id="loss-counter">0</span>  <!--losses will be stored here-->
+            </div>
+            <div class="col"></div>
+        </div> 
+<!--END SCORE BOARD -->
+
+<!--RULES FOR GAME START-->
+        <div class="row mt-3">
+            <div class="col-sm">
+            </div>
+            <div class="col-md-10  mt-3" id="rules">
+                <h2>Rules</h2>
+                <p>You have <strong>9</strong> attempts to get the word right. All words are bakes found on the <em>Great British Bake Off</em>. Guess the right letter and the blank space will be replaced by that letter. Guess the wrong word and your guesses will decrease.</p> 
+                <p>Now, on your mark, get set, WORD!</p>
+            </div>
+            <div class="col-sm"></div>
+        </div>
+
+<!--ATTEMPS LEFT-->
+        <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-md-10  mt-3" id="guesses">
+                    <p>You have <span id="guesses-left">9</span> attemps to find the word. </p>
+                </div>
+                <div class="col-sm"></div>
+        </div>
+
+<!--PUZZLE STATE--> 
+        <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-md-10 mt-3">
+                    <h1 id="puzzle-state">_ _ _ _ _ _</h1>
+                </div>
+                <div class="col-sm"></div>
+            </div>
+
+<!--PLAY BUTTONS // sadly did not figure out how to do this T_T-->
+        <!-- <div class="row">
+            <div class="col-sm"></div>
+            <div class="col-md-10 mt-3">
+                <div id="letter-buttons"></div> LETTER BUTTONS WOULD GO HERE
+            </div>
+            <div class="col-sm"></div>
+        </div> -->
+
+<!--GUESS LETTERS-->
+        <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-md-10 mt-3">
+                    <h2>Wrong Guesses</h2>
+                        <div id="wrong-guesses"><!--wrong letters go here--></div> 
+                </div>
+                <div class="col-sm"></div>
+            </div>
+    
+<!--SHARE STUFF-->
+<div class="row mt-5">
+        <div class="col-sm"></div>
+        <div class="col-md-10 mt-3">
+                <p> <center>Having fun? Share it with your friends!
+                <br>
+                <!--place holder links they need to be updated for the final url-->
+                <a href="https://www.facebook.com/sharer/sharer.php?u=">Share on Facebook</a> or <a href="https://twitter.com/home?status=">on Twitter</a>!</center></p>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+
+<!--PLAY AGAIN AREA // maybe not do this one-->
+        <!-- <div class="row mt-3">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 mt-3">
+                <button id="playAgain" class="game">Play Again?</button>
+            </div>
+            <div class="col-md-4"></div>
+        </div> -->
+<!--PLAY AGAIN END-->
+    </div>
+<!--CONTAINER END-->
+
+<!--FOOTER-->
+    <div class="footer">
+        <div class="row">
+            <div class="col-6"> <!--credit thingy-->
+                Great British Word Off created by <a href="https://github.com/kkgraph" id="signature">by Kim Graff</a> // 2019</a>
+            </div>
+            <div class="col-6"> 
+            </div>
+        </div>
+    </div>
+<!--FOOTER END-->
+
+<!--LINK JAVASCRIPT-->
+<script src="logic.js"></script>
+</body>
+</html>

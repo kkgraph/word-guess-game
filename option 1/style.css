@@ -1,0 +1,241 @@
+
+/*BASICS*/
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background:#EFE9E5;
+    font-family: 'Lora', serif;
+}
+
+/*LINK*/
+
+a {
+    color: #01295C;
+}
+a:visited {
+    color: #01295C;
+} 
+a:hover {
+    color: white;
+    background: #01295C;
+}
+a:active {
+    color: #EB2226;
+}
+
+/*ANIMATED HEADER BOX ELEMENTS*/
+/*WHY DOES THE LEFT AND RIGHT ONE NOT WORK UGHHHH*/
+.box {
+    position: relative;
+    transform: translate(-50%, -50);
+    width: 1140px;
+    height: 250px;
+    background: white;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0px;
+}
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background:#fff5bf;
+    transition: 0.5s;
+    pointer-events: none;
+}
+.box .content {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 8px dotted #ffdf2e;
+    text-align: center;
+    box-shadow: 0 5px 10px #fffdf2;
+}
+.box .content .header1 {
+    color: #01295C;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 5em;
+    margin: 0;
+    padding: 0;
+}
+
+.box .content .header2 {
+    color: #01295C;
+    font-family: 'Londrina Outline', cursive;
+    font-size: 6em;
+    margin: -35px;
+    padding: 0;
+}
+
+.box span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+.box span:nth-child(1) {
+    transform: rotate(0deg);
+}
+.box span:nth-child(3) {
+    transform: rotate(180deg);
+} 
+.box span:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    background: #ffdf2e;
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0%
+    {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    50%
+    {
+        transform: scaleX(1);
+        transform-origin: left;
+    } 
+    50.1%
+    {
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+    100%
+    {
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+}
+
+/*CONTAINER CONTENTS*/
+.container {
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+}
+h1 {
+    color: #01295C;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 2em;
+    text-align: center;
+}
+h2 {
+    color: white;
+    background: #EB2226;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Righteous', cursive;
+    letter-spacing: 4px;
+}
+h3 {
+    color:white;
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/*SCORE BOARD STUFF*/
+#won-label {
+    background: #EB2226;
+}
+
+#lost-label {
+    background: #EB2226;
+}
+
+#win-counter {
+    color: #01295C;
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+
+#loss-counter {
+    color: #01295C;
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+}
+
+#guesses-left {
+    color: #EB2226;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 18px;
+}
+
+#guesses {
+    text-align: center;
+    font-style: italic;
+    font-size: 18px;
+}
+
+#wrong-guesses {
+    color: #01295C;
+    text-align: center;
+    font-family: 'Londrina Solid', cursive;
+    font-style: italic;
+    font-size: 22px;
+    letter-spacing: 3px;
+}
+
+/*BUTTONS TO PLAY AGAIN -- didn't figure out buttons :( */
+button{
+    color:white;
+    background-color: #01295C;
+    font-family: sans-serif;
+    font-size:25px;
+    padding:2px 2px 2px 2px;
+    min-width:30px;
+    height:40px;
+    margin: 2px 2px 2px 2px;
+    border: solid 1px #01295C;
+    border-radius: 3px;
+  }
+  
+  button:hover{
+    background-color:white;
+    color: #01295C;
+    cursor:pointer;
+  }
+  
+  button:disabled:hover{
+    background-color: #88ace0;
+    border: solid 1px #88ace0;
+  }
+  
+  button:disabled{
+    border: 1px solid #A7A9AC;
+    background-color: #A7A9AC;
+    color: white;
+    cursor: auto;
+  }
+
+  /*FOOTERS*/
+  .footer {
+      color: #01295C;
+      margin: 10px;
+      padding: auto;
+      font-family: sans-serif;
+      text-align: center;
+  }

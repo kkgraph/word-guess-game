@@ -1,14 +1,32 @@
-
+/* to go with the index2.html to try out a different style */
 /*BASICS*/
 * {
     margin: 0;
     padding: 0;
 }
+
+header {
+    background: white;
+    padding: 20px;
+    width: 70%;
+    margin: auto;
+}
+
 body {
     margin: 0;
     padding: 0;
-    background:#EFE9E5;
+    background-image: url("background.png");
+    background-repeat: repeat;
     font-family: 'Lora', serif;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    margin: auto;
+    margin-top: 10px;
+    width: 70%;
+
 }
 
 /*LINK*/
@@ -27,113 +45,11 @@ a:active {
     color: #EB2226;
 }
 
-/*ANIMATED HEADER BOX ELEMENTS*/
-/*WHY DOES THE LEFT AND RIGHT ONE NOT WORK UGHHHH*/
-.box {
-    position: relative;
-    transform: translate(-50%, -50);
-    width: 1140px;
-    height: 250px;
-    background: white;
-    box-sizing: border-box;
-    overflow: hidden;
-    margin: 0px;
-}
-.box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background:#fff5bf;
-    transition: 0.5s;
-    pointer-events: none;
-}
-.box .content {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    border: 8px dotted #ffdf2e;
-    text-align: center;
-    box-shadow: 0 5px 10px #fffdf2;
-}
-.box .content .header1 {
-    color: #01295C;
-    font-family: 'Londrina Solid', cursive;
-    font-size: 5em;
-    margin: 0;
-    padding: 0;
-}
-
-.box .content .header2 {
-    color: #01295C;
-    font-family: 'Londrina Outline', cursive;
-    font-size: 6em;
-    margin: -35px;
-    padding: 0;
-}
-
-.box span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    box-sizing: border-box;
-}
-.box span:nth-child(1) {
-    transform: rotate(0deg);
-}
-.box span:nth-child(3) {
-    transform: rotate(180deg);
-} 
-.box span:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 6px;
-    background: #ffdf2e;
-    animation: animate 4s linear infinite;
-}
-
-@keyframes animate {
-    0%
-    {
-        transform: scaleX(0);
-        transform-origin: left;
-    }
-    50%
-    {
-        transform: scaleX(1);
-        transform-origin: left;
-    } 
-    50.1%
-    {
-        transform: scaleX(1);
-        transform-origin: right;
-    }
-    100%
-    {
-        transform: scaleX(0);
-        transform-origin: right;
-    }
-}
-
 /*CONTAINER CONTENTS*/
-.container {
-    margin-top: 20%;
-    margin-left: auto;
-    margin-right: auto;
-    background: white;
-}
 h1 {
     color: #01295C;
     font-family: 'Londrina Solid', cursive;
-    font-size: 2em;
+    font-size: 5em;
     text-align: center;
 }
 h2 {
@@ -152,53 +68,73 @@ h3 {
 }
 
 /*SCORE BOARD STUFF*/
-#won-label {
-    background: #EB2226;
-}
 
-#lost-label {
-    background: #EB2226;
-}
-
-#win-counter {
-    color: #01295C;
-    font-family: 'Righteous', cursive;
+.score-board {
+    margin: 20px auto;
+    border: 3px solid #01295C;
+    border-radius: 4px;
     text-align: center;
-    letter-spacing: 2px;
-    font-size: 25px;
-}
-
-#loss-counter {
+    width: 200px;
     color: #01295C;
-    font-family: 'Righteous', cursive;
-    text-align: center;
-    letter-spacing: 2px;
-    font-size: 25px;
-}
+    font-size: 46px;
+    padding: 15px 20px;
+    font-family: 'Righteous', sans-serif;
+    position: relative;
 }
 
-#guesses-left {
-    color: #EB2226;
+.badge {
+    background: #e2584d;
+    color: white;
+    font-size: 16px;
+    padding: 2px 10px;
+    font-family: 'Righteous', sans-serif;
+}
+
+#win-label {
+    position: absolute;
+    top: 30px;
+    left: -25px;
+}
+
+#loss-label {
+    position: absolute;
+    top: 30px;
+    right: -30px;
+}
+
+/*RESULT STILL NEEDS TO BE FIXED!!!!!!!!!*/
+.result {
+    font-size: 40px;
+    color: #01295C;
+}
+.result > p {
+    text-align: center;
+    font-family: 'Righteous', sans-serif;
     font-weight: bold;
-    font-style: normal;
-    font-size: 18px;
 }
 
-#guesses {
-    text-align: center;
-    font-style: italic;
-    font-size: 18px;
+/* BODY CONTENT: RULES*/
+.rules {
+    width: 85%;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
 }
-
-#wrong-guesses {
-    color: #01295C;
-    text-align: center;
-    font-family: 'Londrina Solid', cursive;
-    font-style: italic;
-    font-size: 22px;
-    letter-spacing: 3px;
+.puzzle {
+    width: 85%;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
 }
-
+.wrong {
+    width: 85%;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    padding: 10px;
+}
 /*BUTTONS TO PLAY AGAIN -- didn't figure out buttons :( */
 button{
     color:white;
@@ -234,8 +170,9 @@ button{
   /*FOOTERS*/
   .footer {
       color: #01295C;
-      margin: 10px;
+      margin: 0px;
       padding: auto;
-      font-family: sans-serif;
+      font-family: 'Londrina Solid', cursive;
+      font-size: 20px;
       text-align: center;
   }
