@@ -14,7 +14,7 @@ body {
 /*LINK*/
 
 a {
-    color: #B9CFED;
+    color: #01295C;
 }
 a:visited {
     color: #01295C;
@@ -31,16 +31,13 @@ a:active {
 /*WHY DOES THE LEFT AND RIGHT ONE NOT WORK UGHHHH*/
 .box {
     position: absolute;
-/*    top: 10%;
-    left: 20%; */
     transform: translate(-50%, -50);
-    width: 800px;
+    width: 1140px;
     height: 250px;
     background: white;
     box-sizing: border-box;
     overflow: hidden;
-    box-shadow: 0 20px 50px #A7A9AC; /*maybe remove*/
-    border: 2px solid(#A7A9AC);
+    margin: 25px;
 }
 .box::before {
     content: '';
@@ -52,10 +49,6 @@ a:active {
     background:#fff5bf;
     transition: 0.5s;
     pointer-events: none;
-}
-.box:hover::before {
-    left: -50%;
-    transform: skewX(-5deg);
 }
 .box .content {
     position: absolute;
@@ -148,11 +141,14 @@ h2 {
     background: #EB2226;
     font-weight: bold;
     text-align: center;
+    font-family: 'Righteous', cursive;
+    letter-spacing: 4px;
 }
 h3 {
     color:white;
     font-family: 'Righteous', cursive;
     text-align: center;
+    letter-spacing: 2px;
 }
 
 /*SCORE BOARD STUFF*/
@@ -185,7 +181,16 @@ h3 {
     font-size: 18px;
 }
 
-/*BUTTONS TO PLAY AGAIN*/
+#wrong-guesses {
+    color: #01295C;
+    text-align: center;
+    font-family: 'Londrina Solid', cursive;
+    font-style: italic;
+    font-size: 22px;
+    letter-spacing: 3px;
+}
+
+/*BUTTONS TO PLAY AGAIN -- didn't figure out buttons :( */
 button{
     color:white;
     background-color: #01295C;
