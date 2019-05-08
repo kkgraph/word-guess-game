@@ -67,6 +67,7 @@ h1 {
 .outline {
   font-family: 'Londrina Outline', cursive;
   font-size: 6em;
+  letter-spacing: 10px;
 }
 h2 {
     color: #01295C;
@@ -92,7 +93,7 @@ h3 {
     width: 40%;
     height: 20%;
     color: #01295C;
-    font-size: 46px;
+    font-size: 50px;
     padding: 15px 20px;
     font-family: 'Righteous', sans-serif;
     position: relative;
