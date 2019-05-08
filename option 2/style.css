@@ -30,14 +30,14 @@ a:active {
 /*ANIMATED HEADER BOX ELEMENTS*/
 /*WHY DOES THE LEFT AND RIGHT ONE NOT WORK UGHHHH*/
 .box {
-    position: absolute;
+    position: relative;
     transform: translate(-50%, -50);
     width: 1140px;
     height: 250px;
     background: white;
     box-sizing: border-box;
     overflow: hidden;
-    margin: 25px;
+    margin: 0px;
 }
 .box::before {
     content: '';
@@ -160,12 +160,21 @@ h3 {
     background: #EB2226;
 }
 
-#won {
+#win-counter {
     color: #01295C;
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 25px;
 }
 
-#lost {
+#loss-counter {
     color: #01295C;
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 25px;
+}
 }
 
 #guesses-left {
