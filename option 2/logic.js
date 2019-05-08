@@ -3,6 +3,8 @@
 //LETTERS FOR BUTTONS & WORDS FOR GAME
 // var wordLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var gameWords = ["choux", "biscuits", "millefeuille", "frangipane", "palvova", "meringue", "bread", "pies", "madaleines", "sponge"]
+var result_p = document.querySelector(".result > p"); //so the results paragraph changes
+
 
 //SETTING UP GAME
 var randomWord = function(gameWords) {
@@ -104,11 +106,13 @@ function startNewRound(game) {
        game.wins++;
        alert("You won! You knew the word was " + game.round.word + "! Prue would be proud!")
        //i want to figure out how to insert this on the page and not have an alert
+       result_p.innerHTML = "You won! You're on 🔥🔥🔥";
     }
     else {
         game.losses++;
         alert("Sorry, mate, but the word was " + game.round.word + ". Soggy bottoms. Try again?")
         //i want to figure out how to insert this on the page and not have an alert
+        result_p.innerHTML = "Sorry, mate, better luck this try!";
     }
     return game;
 }
@@ -165,7 +169,6 @@ document.onkeyup = function (event) {
     document.getElementById("guesses-left").innerText = myGame.round.guessesLeft;
 }
 
-//RESET GAME
 
 function gameReset() {
     myGame.round.guessesLeft = 0;
@@ -176,3 +179,5 @@ function gameReset() {
         myGame.round = setupRound(randomWord(gameWords));
     }
 }
+
+

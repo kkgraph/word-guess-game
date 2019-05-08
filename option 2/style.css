@@ -169,8 +169,9 @@ h3 {
 #wrong-guesses {
     color: red;
     font-family: 'Righteous', sans-serif;
-    font-size: 20px;
+    font-size: 40px;
     font-weight: bold;
+    text-align: center;
     letter-spacing: 4px;
     text-transform: uppercase;
 }
@@ -209,7 +210,6 @@ button{
   /*FOOTERS*/
   .footer {
       color: #01295C;
-      margin: 0px;
       padding: auto;
       font-family: 'Londrina Solid', cursive;
       font-size: 20px;
