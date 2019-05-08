@@ -8,5 +8,5 @@ This was created for the University of Columbia's coding bootcamp. The assignmen
 
 ## Functionality Breakdown
 <!-- TODO: update this to your screenshot, gif, etc. demonstrating functionality. add any additional explanation below -->
-[Screenshot of Game](screenshot.png)
+[Screenshot of Game](assets/screenshot.png)
 
