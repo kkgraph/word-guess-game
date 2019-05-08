@@ -1,7 +1,6 @@
-//logic2 to go with index2 and style2 to try out a next user interface
 //UTILITY FUNCTIONS START 
-//LETTERS FOR BUTTONS & WORDS FOR GAME
-// var wordLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+var okLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var gameWords = ["choux", "biscuits", "millefeuille", "frangipane", "palvova", "meringue", "bread", "pies", "madaleines", "sponge"]
 var result_p = document.querySelector(".result > p"); //so the results paragraph changes
 
