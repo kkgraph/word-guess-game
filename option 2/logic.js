@@ -146,27 +146,33 @@ document.onkeyup = function (event) {
         myGame = startNewRound(myGame);
         myGame.round = setupRound(randomWord(gameWords));
     }
-
-// Uses the ramdom word and displays the empty blanks
+//HTML CHANGING AREA
+//SETTING UP PUZZLE
     document.getElementById("puzzle-state").innerText = myGame.round.puzzleState.join(" ");
 
 //WRONG GUESSES
-// shows the letters that are wrong guesses
-    document.getElementById("wrong-guesses").innerText = myGame.round.wrongGuesses;
-//    myGame.round.wrongGuesses.setAttribute("id", "wrong-guesses");
+    document.getElementById("wrong-guesses").innerText = myGame.round.wrongGuesses.join(" ");
 
 //WIN STUFF
 // shows  updated number of wins
     document.getElementById("win-counter").innerText = myGame.wins;
-//    myGame.wins.setAttribute("class", "h1");
 
 //LOSS STUFF
-// shows the updated object for total losses
     document.getElementById("loss-counter").innerText = myGame.losses;
-//    myGame.losses.setAttribute("class", "h1");
 
 
 //LIVES LEFT STUFF
-// shows updated number of guesses left
     document.getElementById("guesses-left").innerText = myGame.round.guessesLeft;
+}
+
+//RESET GAME
+
+function gameReset() {
+    myGame.round.guessesLeft = 0;
+    hasLost(myGame.round.guessesLeft);
+
+    if (isEndOfRound(myGame.round)) {
+        myGame = startNewRound(myGame);
+        myGame.round = setupRound(randomWord(gameWords));
+    }
 }
