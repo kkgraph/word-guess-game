@@ -135,6 +135,18 @@ h3 {
     margin-top: 10px;
     padding: 10px;
 }
+
+.wrong > p {
+    text-align: center;
+}
+
+/* THIS IS NOT WORKING YET */
+.wrong > span {
+    color: red;
+    font-family:  'Righteous', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
 /*BUTTONS TO PLAY AGAIN -- didn't figure out buttons :( */
 button{
     color:white;
