@@ -104,14 +104,14 @@ function startNewRound(game) {
     if (hasWon(puzzleState) === true) {
        game.wins++;
        alert("You won! You knew the word was " + game.round.word + "! Prue would be proud!")
-       //i want to figure out how to insert this on the page and not have an alert
+       //changing result paragraph
        result_p.innerHTML = "You won! You're on 🔥🔥🔥";
     }
     else {
         game.losses++;
-        alert("Sorry, mate, but the word was " + game.round.word + ". Soggy bottoms. Try again?")
-        //i want to figure out how to insert this on the page and not have an alert
-        result_p.innerHTML = "Sorry, mate, better luck this try!";
+        alert("Sorry, mate, but the word was " + game.round.word + ". Soggy bottoms. Give it another go?")
+        //changing result paragraph 
+        result_p.innerHTML = "Sorry, mate, better luck this time!";
     }
     return game;
 }
@@ -168,7 +168,7 @@ document.onkeyup = function (event) {
     document.getElementById("guesses-left").innerText = myGame.round.guessesLeft;
 }
 
-
+//RESET THE GAME
 function gameReset() {
     myGame.round.guessesLeft = 0;
     hasLost(myGame.round.guessesLeft);
