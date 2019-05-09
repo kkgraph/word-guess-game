@@ -1,16 +1,22 @@
 //UTILITY FUNCTIONS START 
 
 var okLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var gameWords = ["choux", "biscuits", "millefeuille", "frangipane", "palvova", "meringue", "bread", "pies", "madaleines", "sponge"]
-var result_p = document.querySelector(".result > p"); //so the results paragraph changes
 
+//1.0 - gameWords variable
+var gameWords = ["choux", "biscuits", "millefeuille", "frangipane", "palvova", "meringue", "bread", "pies", "madaleines", "sponge"]
+
+//so result paragraphs change
+var result_p = document.querySelector(".result > p"); 
 
 //SETTING UP GAME
+
+//1.1 - randomWord function
 var randomWord = function(gameWords) {
     var guessWord = gameWords[Math.floor(Math.random() * gameWords.length)];
     return guessWord;
 };
 
+//1.2 - isCorrectGuess function
 var isCorrectGuess = function(word, letter) {
     for (var i = 0; i <= word.length; i++) {
     if (word[i] === letter) {
@@ -20,14 +26,16 @@ var isCorrectGuess = function(word, letter) {
     return false;
 }
 
+//1.3 - getBlanks function
 var getBlanks = function(word) {
-    var answer = [];
+    var blank = [];
     for (var i = 0; i < word.length; i++) {
-        answer[i] = "_";
+        blank[i] = "_";
     }
-    return answer; 
+    return blank; 
 }
 
+//1.4 - fillBlanks function
 function fillBlanks(word, puzzleState, letter) {
     if(isCorrectGuess(word, letter)){
         for (var i = 0; i < word.length; i++) {
@@ -42,27 +50,30 @@ function fillBlanks(word, puzzleState, letter) {
 //END SETTING UP THE UTILITY FUNCTIONS 
 //START GAME FUNCTION 
 
+//1.5 - setupRound function
 function setupRound(word) {
-    var object = {
+    var setUp = {
         word: word,
         guessesLeft: 9,
-        wrongGuesses: [ ],
+        wrongGuesses: [],
         puzzleState: getBlanks(word),
     }
-    return object;
+    return setUp;
  }
 
-function updateRound(object, letter) {
-    if (isCorrectGuess(object.word, letter) === false) {
-        object.guessesLeft--;
-        object.wrongGuesses.push(letter);
+ //1.6 - updateRound function
+function updateRound(setUp, letter) {
+    if (isCorrectGuess(setUp.word, letter) === false) {
+        setUp.guessesLeft--;
+        setUp.wrongGuesses.push(letter);
     }
     else {
-        fillBlanks(object.word, object.puzzleState, letter)
+        fillBlanks(setUp.word, setUp.puzzleState, letter)
     }
-    return object;
+    return setUp;
 }
 
+//1.7 - hasWon function
 function hasWon(puzzleState) {
     for (var i = 0; i < puzzleState.length; i++) {
     if (puzzleState[i] === "_") {
@@ -72,6 +83,7 @@ function hasWon(puzzleState) {
     return true;
 }
 
+//1.8 - hasLost function
 function hasLost(guessesLeft) {
     if (guessesLeft === 0) {
         return true;
@@ -79,16 +91,18 @@ function hasLost(guessesLeft) {
     return false;
 }
 
-function isEndOfRound(object) {
-    if (object.guessesLeft === 0) {
+//1.9 - isEndOfRound function
+function isEndOfRound(setUp) {
+    if (setUp.guessesLeft === 0) {
     return true;
 }
-    if (hasWon(object.puzzleState)) {
+    if (hasWon(setUp.puzzleState)) {
         return true;
     }
 return false;
 }
 
+//1.10 - setupGame function
 function setupGame(gameWords, wins, losses) {
     var game = {
         words: gameWords,
@@ -99,6 +113,7 @@ function setupGame(gameWords, wins, losses) {
     return game;
  }
 
+ //1.11 - startNewRound function
 function startNewRound(game) {
     var puzzleState = game.round.puzzleState;
     if (hasWon(puzzleState) === true) {
@@ -111,12 +126,12 @@ function startNewRound(game) {
         game.losses++;
         alert("Sorry, mate, but the word was " + game.round.word + ". Soggy bottoms. Give it another go?")
         //changing result paragraph 
-        result_p.innerHTML = "Sorry, mate, better luck this time!";
+        result_p.innerHTML = "Better luck this time!";
     }
     return game;
 }
 var myGame = setupGame(gameWords, 0, 0);
-
+console.log(myGame);
 //END GAME FUNCTION 
 
 //PAGE SET UP
