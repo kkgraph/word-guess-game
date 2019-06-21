@@ -10,3 +10,5 @@ This was created for the University of Columbia's coding bootcamp. The assignmen
 <!-- TODO: update this to your screenshot, gif, etc. demonstrating functionality. add any additional explanation below -->
 [Screenshot of Game](assets/wordoff.gif)
 
+## Play the game
+https://kkgraph.github.io/word-guess-game/
