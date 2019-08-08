@@ -1,6 +1,11 @@
 # Word Guess Game (Browser)
 
-This word guess game incorporates JS, HTML, & Bootstrap to create a Great British Bake Off themed webpage game.
+This word guess game created with a Great British Bake Off themed. You have 9 tries to guess the right letters before you lose the game. It will also count how many wins and loses you have in total. 
+
+# Built With
+* Javascript
+* HTML
+* Bootstrap
 
 ## Overview
 
